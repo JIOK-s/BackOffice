@@ -1,9 +1,16 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, {
+    useCallback,
+    useMemo,
+    useRef,
+    useState,
+    useEffect,
+} from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
+import axios from 'axios';
 
-const SaleManagement = () => {
+const SalesManagement = () => {
     const rowDataA = [
         { id: '1', make: 'Toyota', model: 'Celica', price: 35000 },
         { id: '4', make: 'BMW', model: 'M50', price: 60000 },
@@ -28,7 +35,10 @@ const SaleManagement = () => {
         return (params) => params.data.id;
     }, []);
 
-    const containerStyle = useMemo(() => ({ width: '100%', height: '100%' }), []);
+    const containerStyle = useMemo(
+        () => ({ width: '100%', height: '100%' }),
+        [],
+    );
 
     const gridStyle = useMemo(() => ({ height: '100%', width: '100%' }), []);
 
@@ -41,6 +51,20 @@ const SaleManagement = () => {
     const onRowDataB = useCallback(() => {
         setRowData(rowDataB);
     }, [rowDataB]);
+
+    const [axiosSample, setAxiosSample] = useState([]);
+
+    const axiosSampleFun = useCallback(() => {
+        // Axios를 사용하여 데이터를 가져옵니다.
+        axios
+            .get('http://localhost:8080/hello')
+            .then((response) => {
+                setAxiosSample(response.data);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     return (
         <div style={containerStyle}>
@@ -67,9 +91,16 @@ const SaleManagement = () => {
                         />
                     </div>
                 </div>
+                <div>
+                    <button onClick={axiosSampleFun}>axios</button>
+                </div>
+                <div>
+                    <h1>Post List</h1>
+                    <div>{axiosSample}</div>
+                </div>
             </div>
         </div>
     );
 };
 
-export default SaleManagement;
+export default SalesManagement;
