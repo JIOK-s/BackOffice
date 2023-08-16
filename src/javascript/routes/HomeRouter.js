@@ -1,11 +1,31 @@
 import {createBrowserRouter, Outlet,} from "react-router-dom";
-import salesRouter from "./SalesRouter";
+
 import SidebarMenu from "../pages/SidebarMenu";
-import MembersRouter from "./MembersRouter";
+import salesRouter from "./SalesRouter";
+import membersRouter from "./MembersRouter";
+import purchasesRouter from "./PurchasesRouter";
 
-const childrenArray = salesRouter.concat(MembersRouter)
+import '../../App.css';
+import '../styles/SidebarMenu.css';
+import '../styles/Contents.css';
 
-const homeRouter = createBrowserRouter([
+const main = [
+    {
+        path: "/",
+        element: <div>home 입니당</div>
+    },
+    {
+        path: "/home",
+        element: <div>home 입니당</div>
+    }
+];
+
+export const childrenArray = main
+    .concat(salesRouter)
+    .concat(membersRouter)
+    .concat(purchasesRouter);
+
+export const homeRouter = createBrowserRouter([
     {
         path: "/",
         element:
@@ -21,5 +41,3 @@ const homeRouter = createBrowserRouter([
         children: childrenArray
     },
 ]);
-
-export default homeRouter
