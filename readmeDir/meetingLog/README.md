@@ -1,4 +1,8 @@
 ## 업무일지
+- 2023-08-19
+  - router object name 설정 및 sidebar 객체 가져오기 수정
+  - prettier 및 eslint 설정
+
 - 2023-08-16
   - axios 적용
 
