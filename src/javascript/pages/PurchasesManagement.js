@@ -1,16 +1,10 @@
-import React, {
-    useCallback,
-    useMemo,
-    useRef,
-    useState,
-    useEffect,
-} from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import axios from 'axios';
 
-const purchasesManagement = () => {
+const PurchasesManagement = () => {
     /** const data **/
     const rowDataA = [{ id: '1', title: 'test' }];
 
@@ -38,7 +32,10 @@ const purchasesManagement = () => {
         axios
             .get('http://localhost:8080/hello')
             .then((response) => {
-                const updatedRowData = rowData.concat({ id: 2, title: response.data });
+                const updatedRowData = rowData.concat({
+                    id: 2,
+                    title: response.data,
+                });
                 setRowData(updatedRowData);
             })
             .catch((error) => {
@@ -54,13 +51,12 @@ const purchasesManagement = () => {
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                }}
-            >
+                }}>
                 <div style={{ marginBottom: '5px', minHeight: '30px' }}>
                     <button onClick={onRowDataA}>Row Data A</button>
                 </div>
                 <div style={{ flex: '1 1 0px' }}>
-                    <div style={gridStyle} className="ag-theme-alpine">
+                    <div style={gridStyle} className='ag-theme-alpine'>
                         <AgGridReact
                             rowData={rowData}
                             columnDefs={columnDefs}
@@ -75,4 +71,4 @@ const purchasesManagement = () => {
     );
 };
 
-export default purchasesManagement;
+export default PurchasesManagement;

@@ -32,6 +32,9 @@
 #### git 원격 브랜치와 기존 브랜치 합치기
 - 기존의 history와 원격 브랜치의 history가 서로 관련 기록이 없는 경우 fetch가 되지 않는다.
     - 따라서 git pull origin develop --allow-unrelated-histories를 이용하여 병합
+- arrow function을 사용할 때 2가지를 고려해야 한다.
+    - {}를 그대로 이용하려면 return을 이용해야 한다.
+    - 혹은 ()를 이용한다. 단, 이 경우는 마지막 문만 return 한다.
 
 ## [알게된 점]
 #### webstorm에서 node 및 npm 설정
