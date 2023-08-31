@@ -1,10 +1,4 @@
-import React, {
-    useCallback,
-    useMemo,
-    useRef,
-    useState,
-    useEffect,
-} from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
@@ -74,14 +68,13 @@ const SalesManagement = () => {
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                }}
-            >
+                }}>
                 <div style={{ marginBottom: '5px', minHeight: '30px' }}>
                     <button onClick={onRowDataA}>Row Data A</button>
                     <button onClick={onRowDataB}>Row Data B</button>
                 </div>
                 <div style={{ flex: '1 1 0px' }}>
-                    <div style={gridStyle} className="ag-theme-alpine">
+                    <div style={gridStyle} className='ag-theme-alpine'>
                         <AgGridReact
                             rowData={rowData}
                             columnDefs={columnDefs}
