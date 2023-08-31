@@ -44,4 +44,4 @@
 
 
 ## [업무일지]
-[링크](./readmeDir/meetingLog/README.md)
+[2023년 3분기 업무일지](./readmeDir/meetingLog/2023Y_3Q.md)
