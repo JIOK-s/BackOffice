@@ -1,6 +1,10 @@
 # 지옥이들의 쇼핑몰 프로젝트
-## [backoffice 모듈]
-#### 관리자가 사용하는 화면
+## [프로젝트 개요]
+소비자들이 물건을 사고 팔 수 있는 쇼핑몰 구축 프로젝트
+## [모듈 개요]
+관리자 화면 모듈이다.
+## [GITHUB 주소]
+https://github.com/JIOK-s/BackOffice
 
 ## [개발환경]
 - NODE ver.18.17.0
@@ -44,4 +48,4 @@
 
 
 ## [업무일지]
-[2023년 3분기 업무일지](./readmeDir/meetingLog/2023Y_3Q.md)
+[2023년 3분기 업무일지](https://github.com/JIOK-s/BackOffice/blob/develop/readmeDir/meetingLog/2023Y_3Q.md)
